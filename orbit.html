@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Animation</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+        }
+
+        
+        .orbit-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        .center-ball {
+            width: 80px;
+            height: 80px;
+            background-color: #000000; 
+            border-radius: 50%; 
+            
+        }
+
+        
+        .orbiting-ball {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            width: 25px;
+            height: 25px;
+            background-color: #4db8ff;
+            border-radius: 50%;
+            
+            transform-origin: center center;
+
+            animation: orbit 6s linear infinite;
+        }
+
+        
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg) translateX(120px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(120px) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="orbit-container">
+        <div class="center-ball"></div>
+        <div class="orbiting-ball"></div>
+    </div>
+</body>
+</html>
